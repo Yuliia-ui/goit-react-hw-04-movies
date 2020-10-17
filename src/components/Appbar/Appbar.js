@@ -1,10 +1,11 @@
 import React from 'react';
 import Navigation from '';
+import styles from '../Appbar/Appbar.module.css';
 
 const Appbar = () => (
-  <header>
+  <div className={styles.Appbar}>
     <Navigation />
-  </header>
+  </div>
 );
 
 export default Appbar;

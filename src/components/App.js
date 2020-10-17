@@ -1,8 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 import Layout from './Layout';
 import Navigation from './Navigation';
 import routes from '../routes';
+import NotFound from './NotFound/NotFound';
 
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home-page" */),
@@ -18,7 +20,13 @@ const MovieDetailsPage = lazy(() =>
 const App = () => (
   <Navigation>
     <Layout>
-      <Suspense fallback={<Loader />}>
+      <Suspense
+        fallback={
+          <div>
+            <Loader type="Hearts" color="#00BFFF" height={80} width={80} />
+          </div>
+        }
+      >
         <Switch>
           <Route path={routes.home} exact component={HomePage} />
           <Route path={routes.MovieDetailsPage} component={MovieDetailsPage} />
