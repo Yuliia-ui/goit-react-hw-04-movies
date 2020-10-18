@@ -21,7 +21,7 @@ const fetchMoviesReviews = async movieID => {
   return data;
 };
 
-const fetchMoviesDetails = async movieID => {
+const fetchHomePageMovies = async movieID => {
   const { data } = await axios.get(
     `movie/${movieID}?api_key=${apiKey}&language=en-US`,
   );
@@ -38,7 +38,7 @@ const fetchMoviesCast = async movieID => {
 export default {
   fetchMovieDetails,
   fetchMoviesSearch,
-  fetchMoviesDetails,
+  fetchHomePageMovies,
   fetchMoviesCast,
   fetchMoviesReviews,
 };

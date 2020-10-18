@@ -16,7 +16,7 @@ export default class HomePage extends Component {
   }
 
   handleApiFetcher = query => {
-    MovieApi.defaultMoviesFetcher()
+    MovieApi.fetchMovieDetails()
       .then(response =>
         this.setState({
           movies: response.results,
@@ -39,6 +39,8 @@ export default class HomePage extends Component {
             </div>
           )}
           {error && <p>Oops, something went wrong: {error.message}</p>}
+
+          {movies && <MovieList movies={movies} {...this.props} />}
 
           <ul className="MovieList">
             {movies.map(movie => (

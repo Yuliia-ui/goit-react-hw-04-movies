@@ -33,7 +33,7 @@ const App = () => (
         />
         <Route path={routes.movies} component={AsincMoviesPage} />
         <Route component={NotFound} />
-        <Redirect to={routes.home} />
+        <Redirect to={routes.homePage} />
       </Switch>
     </Suspense>
   </Layout>

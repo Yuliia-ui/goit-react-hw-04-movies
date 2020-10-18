@@ -10,7 +10,7 @@ const Navigation = () => (
     <li className={styles.listItem}>
       <NavLink
         exact
-        to={routes.home}
+        to={routes.homePage}
         className={styles.NavLink}
         activeClassName={styles.LinkActive}
       >

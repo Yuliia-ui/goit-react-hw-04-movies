@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import routes from '../../../routes';
 import styles from '../MovieItem/MovieItem.module.css';
 
-const MoviesItem = ({ id, poster_path, title, location }) => {
+const MovieItem = ({ id, poster_path, title, location }) => {
   return (
     <li className={styles.MovieItem}>
       <Link
         className={styles.ItemLink}
         to={{
-          pathname: `${routes.movies}/${id}`,
+          pathname: `${routes.movie}/${id}`,
           state: { from: location },
         }}
       >
@@ -20,4 +20,4 @@ const MoviesItem = ({ id, poster_path, title, location }) => {
   );
 };
 
-export default MoviesItem;
+export default MovieItem;
