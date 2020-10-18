@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieItem from './MovieItem/MovieItem';
-import styles from './MoviesItem/MoviesItem.module.css';
+import styles from './MovieItem/MovieItem.module.css';
 
 const MoviesList = ({ movies, ...props }) => (
   <ul className={styles.MoviesList}>

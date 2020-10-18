@@ -1,4 +1,5 @@
 import React from 'react';
+import Appbar from '../Appbar/Appbar';
 
 const styles = {
   maxWidth: 1170,

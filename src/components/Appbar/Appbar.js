@@ -1,11 +1,11 @@
 import React from 'react';
-import Navigation from '';
+import Navigation from '../Navigation/Navigation';
 import styles from '../Appbar/Appbar.module.css';
 
 const Appbar = () => (
-  <div className={styles.Appbar}>
+  <header className={styles.Appbar}>
     <Navigation />
-  </div>
+  </header>
 );
 
 export default Appbar;

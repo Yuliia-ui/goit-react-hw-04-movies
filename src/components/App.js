@@ -1,42 +1,42 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
-import Layout from './Layout';
-import Navigation from './Navigation';
+import Layout from './Layout/Layout';
 import routes from '../routes';
 import NotFound from './NotFound/NotFound';
 
-const HomePage = lazy(() =>
-  import('../pages/HomePage' /* webpackChunkName: "home-page" */),
+const AsincHome = lazy(() =>
+  import('../views/Home' /* webpackChunkName: "home-page" */),
 );
-const MoviesPage = lazy(() =>
-  import('../pages/MoviesPage' /* webpackChunkName: "movies-page" */),
+const AsincMoviesPage = lazy(() =>
+  import('../views/MoviePage' /* webpackChunkName: "movies-page" */),
 );
-const MovieDetailsPage = lazy(() =>
+const AsincMovieDetailsPage = lazy(() =>
   import(
-    '../pages/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
+    '../views/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
   ),
 );
 const App = () => (
-  <Navigation>
-    <Layout>
-      <Suspense
-        fallback={
-          <div>
-            <Loader type="Hearts" color="#00BFFF" height={80} width={80} />
-          </div>
-        }
-      >
-        <Switch>
-          <Route path={routes.home} exact component={HomePage} />
-          <Route path={routes.MovieDetailsPage} component={MovieDetailsPage} />
-          <Route path={routes.movies} component={MoviesPage} />
-          <Route component={NotFound} />
-          <Redirect to={routes.home} />
-        </Switch>
-      </Suspense>
-    </Layout>
-  </Navigation>
+  <Layout>
+    <Suspense
+      fallback={
+        <div>
+          <Loader type="Hearts" color="#00BFFF" height={80} width={80} />
+        </div>
+      }
+    >
+      <Switch>
+        <Route path={routes.homePage} exact component={AsincHome} />
+        <Route
+          path={routes.MovieDetailsPage}
+          component={AsincMovieDetailsPage}
+        />
+        <Route path={routes.movies} component={AsincMoviesPage} />
+        <Route component={NotFound} />
+        <Redirect to={routes.home} />
+      </Switch>
+    </Suspense>
+  </Layout>
 );
 
 export default App;

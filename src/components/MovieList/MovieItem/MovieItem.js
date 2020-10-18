@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import routes from '../../../routes';
-
-import styles from './MovieItem.module.css';
+import styles from '../MovieItem/MovieItem.module.css';
 
 const MoviesItem = ({ id, poster_path, title, location }) => {
   return (
@@ -16,7 +14,7 @@ const MoviesItem = ({ id, poster_path, title, location }) => {
         }}
       >
         <img className={styles.ItemMovieImg} src={poster_path} alt={title} />
-        <h3 className={styles.ItemMovieTitle}>{title}</h3>
+        <p className={styles.ItemMovieTitle}>{title}</p>
       </Link>
     </li>
   );
