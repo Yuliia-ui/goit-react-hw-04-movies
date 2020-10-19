@@ -5,7 +5,7 @@ import moviesApi from '../services/movieApi';
 import Loader from 'react-loader-spinner';
 import routes from '../routes';
 import MoviePage from '../views/MoviePage';
-import defaultAvatar from '../assets/mistake-3085712_640.jpg';
+import defaultAvatar from '../assets/zoo-2257949_1920.png';
 
 const AsyncCast = lazy(() =>
   import('./Cast' /* webpackChunkName: "async-cast-component" */),

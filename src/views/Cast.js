@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Loader from 'react-loader-spinner';
 import moviesApi from '../services/movieApi';
-import defaultAvatar from '../assets/mistake-3085712_640.jpg';
+import defaultAvatar from '../assets/zoo-2257949_1920.png';
 
 export default class Cast extends Component {
   state = {

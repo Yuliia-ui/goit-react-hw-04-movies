@@ -6,7 +6,7 @@ import routes from '../routes';
 import NotFound from './NotFound/NotFound';
 
 const AsincHome = lazy(() =>
-  import('../views/Home' /* webpackChunkName: "home-page" */),
+  import('../views/HomePage' /* webpackChunkName: "home-page" */),
 );
 const AsincMoviesPage = lazy(() =>
   import('../views/MoviePage' /* webpackChunkName: "movies-page" */),
@@ -33,7 +33,7 @@ const App = () => (
         />
         <Route path={routes.movies} component={AsincMoviesPage} />
         <Route component={NotFound} />
-        <Redirect to={routes.homePage} />
+        <Redirect to={routes.HomePage} />
       </Switch>
     </Suspense>
   </Layout>

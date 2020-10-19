@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import styles from '../Search/Search.module.css';
 
-export default class Searchbox extends Component {
+export default class Search extends Component {
   state = {
     value: '',
   };

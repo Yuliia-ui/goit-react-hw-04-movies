@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
-import moviesApi from '../services/movieApi';
+import movieApi from '../services/movieApi';
 import Search from '../components/Search/Search';
 import getQueryParams from '../utils/get-Query-Params';
 
@@ -33,7 +33,7 @@ export default class MoviesPage extends Component {
   }
 
   fetchMovies = query => {
-    moviesApi
+    movieApi
       .fetchMovieWithQuery(query)
       .then(movies => this.setState({ movies }))
       .catch(error => this.setState({ error }))
